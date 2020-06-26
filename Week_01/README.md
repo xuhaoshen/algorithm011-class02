@@ -104,6 +104,7 @@ Queue本身是接口，继承自Collection接口，共提供5个方法：
 
 PriorityQueue
 插入：
+```JAVA
     //
     public boolean offer(E e) {
         if (e == null)
@@ -126,13 +127,15 @@ PriorityQueue
         else
             siftUpComparable(k, x);
     }
-    
+```
+
 siftUpUsingComparator()使用自定义比较器，siftUpComparable使用x实现的比较器（因此泛型对象必须实现比较器）
 实现方式：最小堆
 最小堆定义：
 1、完全二叉树
 2、任意节点的值小于等于左右孩子的值
 3、任意非叶子节点的左右子树也是堆
+```JAVA
     private void siftUpUsingComparator(int k, E x) {
         while (k > 0) {
             int parent = (k - 1) >>> 1;
@@ -147,8 +150,10 @@ siftUpUsingComparator()使用自定义比较器，siftUpComparable使用x实现�
         // 这样做比交换减小开销
         queue[k] = x;
     }
+```
 
 举例图解：
+```JAVA
 PriorityQueue queue = new PriorityQueue();
 queue.offer(14);
 queue.offer(7);
@@ -160,6 +165,7 @@ queue.offer(17);
 queue.offer(23);
 queue.offer(15);
 System.out.println(queue);
+```
 打印结果为[4, 7, 6, 10, 9, 12, 17, 23, 14, 15]，现在需要插入元素[3]，
 初始状态：
              4
