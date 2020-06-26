@@ -72,6 +72,7 @@ push: arr[tail++] = val
 poll:  val = arr[head++]
 
 deque改造：
+```JAVA
         Deque<String> deque = new ArrayDeque<>();
         deque.push("a");
         deque.addFirst("b");
@@ -81,10 +82,12 @@ deque改造：
         while (!deque.isEmpty()) {
             System.out.println(deque.removeFirst());
         }
+``` 
       
 分析 Queue 和 Priority Queue 的源码：
 
 Queue本身是接口，继承自Collection接口，共提供5个方法：
+```JAVA
     // 尾部插入，如果队列越界则抛出异常
     boolean add(E e);
     // 尾部插入，如果队列越界则返回false
@@ -97,7 +100,8 @@ Queue本身是接口，继承自Collection接口，共提供5个方法：
     E element();
     // 返回第一个元素，如果队列为空则返回null
     E peek();
-    
+```
+
 PriorityQueue
 插入：
     //
