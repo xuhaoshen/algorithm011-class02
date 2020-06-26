@@ -51,12 +51,12 @@ Lv1.索引：   1   →   3   →   5   →   7     →
     ————————————————————————————
      A | B | C |  |  |  |  |  |
     ————————————————————————————    
-               tail
+               top
      0   1   2   3  4  5  6  7
 
-初始化：size = 0
-push： arr[tail++] = val
-pop:  val = arr[--tail]
+初始化：top = 0
+push： arr[top++] = val
+pop:  val = arr[--top]
  
 队列：
 一种先进先出(FIFO,Fast input, First output)的数据结构。删除和新增时，时间复杂度为O(1)。
@@ -68,7 +68,7 @@ pop:  val = arr[--tail]
    head         tail                   
      0   1   2   3  4  5  6  7
 初始化： head = tail = 0
-push: arr[arr.length - 1] = val
+push: arr[tail++] = val
 poll:  val = arr[head++]
 
 deque改造：
